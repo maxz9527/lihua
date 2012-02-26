@@ -1,0 +1,67 @@
+
+
+         <script>
+            $(function () {
+              $("a[rel=popover]")
+                .popover({
+                  offset: 10
+                })
+                .click(function(e) {
+                  e.preventDefault()
+                })
+            })
+          </script>
+    <div class="container-fluid">
+      <div class="sidebar">
+        <div class="well">
+          <h5>products</h5>
+          <ul>
+              <% @catalogs.each do |catalog| %>
+              <li><%= link_to catalog.name,catalog %>  <%= link_to catalog.products.size,catalog,:class=>"label notice" %></li>
+              <% end %>
+          </ul>
+
+        </div>
+      </div>
+      <div class="content">
+        <!-- Main hero unit for a primary marketing message or call to action -->
+
+        <div class="hero-unit">
+          <h1>Lihua world</h1>
+ 
+          <%=image_tag("ditu.jpg") %>
+          <ul class="tabs">
+          <li><a data-placement="right" href="#" rel="popover" title="company" data-content=<%= @china%> >china</a></li>
+
+           <li><a data-placement="right" href="#" rel="popover" title="abc" data-content=<%= @usa %> >usa</a></li>
+            <li><a data-placement="right" href="#" rel="popover" title="abc" data-content="aaaafad">eng</a></li>
+             <li><a data-placement="right" href="#" rel="popover" title="abc" data-content="aaaafad">jap</a></li>
+      
+          </ul>
+          <div id="contact" class="modal hide fade">
+            <div class="modal-header">
+              <a href="#" class="close">&times;</a>
+              <h3><%= @contact_head %></h3>
+            </div>
+            <div class="modal-body">
+
+              <p><%= @contact_body %></p>
+            </div>
+            <div class="modal-footer">
+              <%= mail_to @email,"Email Us",:class=>"btn primary" %>
+              
+            </div>
+          </div>
+
+          <p><a class="btn primary large" data-controls-modal="contact" data-backdrop="true" >Contact Us &raquo;</a></p>
+        </div>
+        <!-- Example row of columns -->
+ 
+        <hr>
+        <!-- Example row of columns -->
+
+
+      </div>
+    </div>
+
+

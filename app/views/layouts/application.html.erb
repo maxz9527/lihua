@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lihuas</title>
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "application" %> 
+  <%= csrf_meta_tags %>
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+      }
+    </style>
+</head>
+<body onload="setupZoom()">
+
+    <div class="topbar">
+      <div class="topbar-inner">
+        <div class="container-fluid">
+          <a class="brand" href="/">Lihua</a>
+          <ul class="nav">
+            <li><%= link_to 'Home',root_path %></li>
+            <li><%= link_to 'products',products_path %></li>
+            <li><%= link_to 'catalogs',catalogs_path %></li>
+       <% if current_admin %>
+       <li><%= link_to('logout', destroy_admin_session_path,:method => :delete) %></li>
+     <li><%= link_to('edit', edit_registration_path(:admin)) %></li>
+   <% else %>
+    
+       <li><%= link_to('login', new_session_path(:admin)) %></li>
+   <% end %>
+            </ul>
+        </div>
+      </div>
+    </div>
+
+
+<%= yield %>
+        <footer>
+          <p>&copy; LiHua Textile 2011</p>
+        </footer>
+</body>
+</html>
