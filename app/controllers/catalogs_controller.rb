@@ -16,10 +16,12 @@ class CatalogsController < ApplicationController
   def show
     @catalog = Catalog.includes(:products).find(params[:id])
     @products = @catalog.products.all
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render :json => @catalog }
-    end
+   rescue ActiveRecord::RecordNotFound
+    redirect_to :action => "index"
+    #respond_to do |format|
+    #  format.html # show.html.erb
+    #  format.json { render :json => @catalog }
+    #end
   end
 
   # GET /catalogs/new

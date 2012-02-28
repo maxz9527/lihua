@@ -1,11 +1,14 @@
 class HomeController < ApplicationController
   def index
-  	@china = ""
-  	@usa = ""
+
   	@catalogs = Catalog.includes(:products).all
-  	@contact_head = "LiHua Textile"
-  	@contact_body = "address"
-  	@email = "a@a.com"
+  	#@company_name = @setting.company_name
+  	@address = @setting.address
+  	@email = @setting.email
+  	@asia = @setting.asia
+  	@europe = @setting.europe
+  	@africa = @setting.africa
+  	@america = @setting.america
   end
 
 end

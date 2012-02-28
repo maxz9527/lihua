@@ -6,4 +6,10 @@ class Admin < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me
+  def self.first_init
+  	admin = first
+  	if admin.blank?
+  		admin = create(:email => "linglieli@hotmail.com",:password=> "123456",:password_confirmation=>"123456")
+  	end
+  end
 end

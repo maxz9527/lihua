@@ -1,8 +1,9 @@
 Lihuas::Application.routes.draw do
+  resources :settings
+
   devise_for :admins
 
   get "home/index"
-
   resources :catalogs
 
   resources :products

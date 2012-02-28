@@ -1,0 +1,45 @@
+<%= form_for(@setting) do |f| %>
+  <% if @setting.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@setting.errors.count, "error") %> prohibited this setting from being saved:</h2>
+
+      <ul>
+      <% @setting.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :company_name %><br />
+    <%= f.text_field :company_name %>
+  </div>
+  <div class="field">
+    <%= f.label :address %><br />
+    <%= f.text_field :address %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :asia %><br />
+    <%= f.text_field :asia %>
+  </div>
+  <div class="field">
+    <%= f.label :europe %><br />
+    <%= f.text_field :europe %>
+  </div>
+  <div class="field">
+    <%= f.label :africa %><br />
+    <%= f.text_field :africa %>
+  </div>
+  <div class="field">
+    <%= f.label :america %><br />
+    <%= f.text_field :america %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,35 @@
+<h1>Listing settings</h1>
+
+<table>
+  <tr>
+    <th>Company name</th>
+    <th>Address</th>
+    <th>Email</th>
+    <th>Asia</th>
+    <th>Europe</th>
+    <th>Africa</th>
+    <th>America</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @settings.each do |setting| %>
+  <tr>
+    <td><%= setting.company_name %></td>
+    <td><%= setting.address %></td>
+    <td><%= setting.email %></td>
+    <td><%= setting.asia %></td>
+    <td><%= setting.europe %></td>
+    <td><%= setting.africa %></td>
+    <td><%= setting.america %></td>
+    <td><%= link_to 'Show', setting %></td>
+    <td><%= link_to 'Edit', edit_setting_path(setting) %></td>
+    <td><%= link_to 'Destroy', setting, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+

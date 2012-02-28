@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Lihuas</title>
+  <title><%=@company_name%></title>
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %> 
+  <%= javascript_include_tag "/js-global/FancyZoom.js" %>
+  <%= javascript_include_tag "/js-global/FancyZoomHTML.js" %>
+ 
   <%= csrf_meta_tags %>
     <style type="text/css">
       body {
@@ -16,17 +19,18 @@
     <div class="topbar">
       <div class="topbar-inner">
         <div class="container-fluid">
-          <a class="brand" href="/">Lihua</a>
+          <a class="brand" href="/"><%= @company_name %></a>
           <ul class="nav">
             <li><%= link_to 'Home',root_path %></li>
-            <li><%= link_to 'products',products_path %></li>
-            <li><%= link_to 'catalogs',catalogs_path %></li>
+            <li><%= link_to 'Products',products_path %></li>
+            
        <% if current_admin %>
-       <li><%= link_to('logout', destroy_admin_session_path,:method => :delete) %></li>
-     <li><%= link_to('edit', edit_registration_path(:admin)) %></li>
+       <li><%= link_to('Logout', destroy_admin_session_path,:method => :delete) %></li>
+     <li><%= link_to('Edit', edit_registration_path(:admin)) %></li>
+     <li><%= link_to 'Setting',settings_path %></li>
    <% else %>
     
-       <li><%= link_to('login', new_session_path(:admin)) %></li>
+       <li><%= link_to('Login', new_session_path(:admin)) %></li>
    <% end %>
             </ul>
         </div>

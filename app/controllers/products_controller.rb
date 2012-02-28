@@ -15,11 +15,12 @@ class ProductsController < ApplicationController
   # GET /products/1.json
   def show
     @product = Product.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render :json => @product }
-    end
+  rescue ActiveRecord::RecordNotFound
+    redirect_to :action => "index"
+    #respond_to do |format|
+     # format.html # show.html.erb
+      #format.json { render :json => @product }
+    #end
   end
 
   # GET /products/new

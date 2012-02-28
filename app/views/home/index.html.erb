@@ -31,21 +31,21 @@
  
           <%=image_tag("ditu.jpg") %>
           <ul class="tabs">
-          <li><a data-placement="right" href="#" rel="popover" title="company" data-content=<%= @china%> >china</a></li>
+          <li><a data-placement="right" href="#" rel="popover" title="company" data-content=<%= @asia%> >Asia</a></li>
 
-           <li><a data-placement="right" href="#" rel="popover" title="abc" data-content=<%= @usa %> >usa</a></li>
-            <li><a data-placement="right" href="#" rel="popover" title="abc" data-content="aaaafad">eng</a></li>
-             <li><a data-placement="right" href="#" rel="popover" title="abc" data-content="aaaafad">jap</a></li>
+           <li><a data-placement="right" href="#" rel="popover" title="company" data-content=<%= @europe %> >Europe</a></li>
+            <li><a data-placement="right" href="#" rel="popover" title="company" data-content=<%= @africa %> >Africa</a></li>
+             <li><a data-placement="right" href="#" rel="popover" title="company" data-content=<%= @america %> >America</a></li>
       
           </ul>
           <div id="contact" class="modal hide fade">
             <div class="modal-header">
               <a href="#" class="close">&times;</a>
-              <h3><%= @contact_head %></h3>
+              <h3><%= @company_name %></h3>
             </div>
             <div class="modal-body">
 
-              <p><%= @contact_body %></p>
+              <p><%= @address %></p>
             </div>
             <div class="modal-footer">
               <%= mail_to @email,"Email Us",:class=>"btn primary" %>

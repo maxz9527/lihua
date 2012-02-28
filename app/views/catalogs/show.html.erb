@@ -8,7 +8,7 @@
     <th>Name</th>
     <th>Description</th>
     <th>Image</th>
-    
+    <th></th>
     <th></th>
     <th></th>
     <th></th>
@@ -19,7 +19,7 @@
     <td><%= product.name %></td>
     <td><%= product.description %></td>
     <td><%= link_to  image_tag(product.image.url(:thumb)),product.image.url(:large) %>
-    
+    <td><%= mail_to @email,"email for more"%></td>
     <% if current_admin %>
     <td><%= link_to 'Show', product %></td>
     <td><%= link_to 'Edit', edit_product_path(product) %></td>

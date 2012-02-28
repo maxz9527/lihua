@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Company name:</b>
+  <%= @setting.company_name %>
+</p>
+
+<p>
+  <b>Address:</b>
+  <%= @setting.address %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @setting.email %>
+</p>
+
+<p>
+  <b>Asia:</b>
+  <%= @setting.asia %>
+</p>
+
+<p>
+  <b>Europe:</b>
+  <%= @setting.europe %>
+</p>
+
+<p>
+  <b>Africa:</b>
+  <%= @setting.africa %>
+</p>
+
+<p>
+  <b>America:</b>
+  <%= @setting.america %>
+</p>
+
+
+<%= link_to 'Edit', edit_setting_path(@setting) %> |
+<%= link_to 'Back', settings_path %>
