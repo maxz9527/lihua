@@ -1,7 +1,9 @@
 Lihuas::Application.routes.draw do
   resources :settings
 
-  devise_for :admins
+  devise_for :admins,:path_names => { :sign_up => "gogogo" }
+
+
 
   get "home/index"
   resources :catalogs
