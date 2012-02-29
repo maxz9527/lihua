@@ -16,7 +16,7 @@
     <td><%= product.name %></td>
     <td><%= product.description %></td>
     <td><%= link_to  image_tag(product.image.url(:thumb)),product.image.url(:large) %>
-    <td><%= mail_to @email,"email for more"%></td>
+    <td><%= mail_to @email,"email for more",:class=>"btn primary"%></td>
     <% if current_admin %>
     <td><%= link_to 'Show', product %></td>
     <td><%= link_to 'Edit', edit_product_path(product) %></td>
@@ -33,6 +33,6 @@
 <br />
 
 <% if current_admin %>
-<%= link_to 'New Product', new_product_path %>
+<%= link_to 'New Product', new_product_path ,:class=>"btn primary"%>
 <%  end %>
 <%= will_paginate @products %>

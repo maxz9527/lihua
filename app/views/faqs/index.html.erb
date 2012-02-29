@@ -1,0 +1,13 @@
+
+<h1>FAQS</h1>
+
+<ul>
+	<% @faqs.each do |faq| %>
+	<li><h3>Q:<%= faq.question %></h3></li>
+	<p>A:<%= faq.answer %></p>
+	<% end %>
+</ul>
+
+<% if current_admin %>
+<%= link_to 'New Faq', new_faq_path,:class=>"btn primary" %>
+<% end %>

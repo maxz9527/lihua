@@ -1,4 +1,6 @@
 Lihuas::Application.routes.draw do
+  resources :faqs
+
   resources :settings
 
   devise_for :admins,:path_names => { :sign_up => "gogogo" }

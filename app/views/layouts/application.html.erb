@@ -23,13 +23,14 @@
           <ul class="nav">
             <li><%= link_to 'Home',root_path %></li>
             <li><%= link_to 'Products',products_path %></li>
-            
+            <li><%= link_to 'FAQS',faqs_path %></li>
        <% if current_admin %>
        <li><%= link_to('Logout', destroy_admin_session_path,:method => :delete) %></li>
      <li><%= link_to('Edit', edit_registration_path(:admin)) %></li>
      <li><%= link_to 'Setting',settings_path %></li>
+     <li><%= link_to 'Catalogs',catalogs_path%></li>
    <% else %>
-    
+        
        <li><%= link_to('Login', new_session_path(:admin)) %></li>
    <% end %>
             </ul>
