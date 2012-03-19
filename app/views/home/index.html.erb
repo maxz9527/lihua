@@ -1,5 +1,4 @@
-
-
+ 
          <script>
             $(function () {
               $("a[rel=popover]")
@@ -28,8 +27,27 @@
 
         <div class="hero-unit">
           <h1>Lihua world</h1>
- 
-          <%=image_tag("ditu.jpg") %>
+            <div id="wrapper">
+    
+
+        <div class="slider-wrapper theme-default">
+            <div class="ribbon"></div>
+            <div id="slider" class="nivoSlider">
+              <% @companyps.each do |p| %>
+                <%= image_tag p.image.url(:large),:title => p.desc %>
+              <% end %>
+            </div>
+         </div>
+
+    </div>
+    <script type="text/javascript" src="scripts/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="../jquery.nivo.slider.pack.js"></script>
+    <script type="text/javascript">
+    $(window).load(function() {
+        $('#slider').nivoSlider();
+    });
+    </script>
+    </br>
           <ul class="tabs">
           <li><a data-placement="right" href="#" rel="popover" title="company" data-content=<%= @asia%> >Asia</a></li>
 

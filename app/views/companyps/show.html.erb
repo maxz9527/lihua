@@ -1,0 +1,12 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Image:</b>
+  <%= image_tag @companyp.image.url(:large) %>
+  <b>descript:</b>
+  <%= @companyp.desc %>
+</p>
+
+
+<%= link_to 'Edit', edit_companyp_path(@companyp) %> |
+<%= link_to 'Back', companyps_path %>

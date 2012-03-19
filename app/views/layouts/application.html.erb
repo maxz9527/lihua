@@ -6,7 +6,12 @@
   <%= javascript_include_tag "application" %> 
   <%= javascript_include_tag "/js-global/FancyZoom.js" %>
   <%= javascript_include_tag "/js-global/FancyZoomHTML.js" %>
- 
+ <link rel="stylesheet" href="../themes/default/default.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="../themes/pascal/pascal.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="../themes/orman/orman.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="../nivo-slider.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="../style.css" type="text/css" media="screen" />
+
   <%= csrf_meta_tags %>
     <style type="text/css">
       body {
@@ -29,6 +34,7 @@
      <li><%= link_to('Edit', edit_registration_path(:admin)) %></li>
      <li><%= link_to 'Setting',settings_path %></li>
      <li><%= link_to 'Catalogs',catalogs_path%></li>
+     <li><%= link_to 'Company_screen',companyps_path%></li>
    <% else %>
         
        <li><%= link_to('Login', new_session_path(:admin)) %></li>

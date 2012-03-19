@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
   #init
   def init
   	@setting = Setting.first_init
+    
   	Admin.first_init
   	@company_name = @setting.company_name
   	@email = @setting.email

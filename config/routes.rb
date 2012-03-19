@@ -1,4 +1,6 @@
 Lihuas::Application.routes.draw do
+  resources :companyps
+
   resources :faqs
 
   resources :settings

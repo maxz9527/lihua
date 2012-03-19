@@ -9,6 +9,7 @@ class HomeController < ApplicationController
   	@europe = @setting.europe
   	@africa = @setting.africa
   	@america = @setting.america
+    @companyps=Companyp.all(:limit => 4)
   end
 
 end
